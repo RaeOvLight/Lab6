@@ -35,7 +35,7 @@ def main(): # main function
               "\n2. Decode"
               "\n3. Quit")
 
-        menu_choice = int(input("\nPlease enter an option: "))  # prompt user to choose from menu
+        menu_choice = int(input("\nPlease enter an option: ")) # prompt user to choose from menu
 
         # check if user input is 1
         if menu_choice == 1:
@@ -51,11 +51,10 @@ def main(): # main function
                 print("No password stored. Please select menu option 1 to input a password to encode.")
                 continue # reset loop
             else: # decode previously encoded password
-                # decoded_password = decode(password), pass encoded password through encoder function
-                # for consistency, update print variable {password} with {decoded_password} once complete
+                # pass encoded password through encoder function
                 decoded_password = decode(encoded_password)
                 password = decoded_password
-                print(f"The encoded password is {encoded_password}, and the original password is {password}.")
+                print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
 
         # check if user input is 3
         elif menu_choice == 3:
