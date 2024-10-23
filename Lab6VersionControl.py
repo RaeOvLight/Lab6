@@ -11,6 +11,14 @@ def encode(password): # encode function
     return str_result
 
 # decoder undoes encoded password and returns original password
+def decode(encoded_password):
+    decoded_password = ""
+    for digit in encoded_password:
+        # Shift each digit down by 3 and handle wraparound with modulo 10
+        decoded_digit = (int(digit) - 3) % 10
+        decoded_password += str(decoded_digit)
+    return decoded_password
+
 
 
 
@@ -45,6 +53,8 @@ def main(): # main function
             else: # decode previously encoded password
                 # decoded_password = decode(password), pass encoded password through encoder function
                 # for consistency, update print variable {password} with {decoded_password} once complete
+                decoded_password = decode(encoded_password)
+                password = decoded_password
                 print(f"The encoded password is {encoded_password}, and the original password is {password}.")
 
         # check if user input is 3
